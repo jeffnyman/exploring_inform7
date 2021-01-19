@@ -1,0 +1,43 @@
+# Inform 7 IDE Files
+
+*.blurb
+*Build
+*.iFiction
+*Index
+*manifest.plist
+*Release
+*Settings.plist
+*.skein
+notes.rtf
+*Icon*
+
+# OS generated files
+
+$RECYCLE.BIN/
+[Dd]esktop.ini
+.directory
+.DS_Store
+.DS_Store?
+*~
+.nfs*
+.fuse_hidden*
+._*
+.*.sw[op]
+.Spotlight-V100
+.Trashes
+.Trash-*
+ehthumbs.db
+Thumbs.db
+# Icon must end with two \r
+Icon
+
+
+# IDE: Visual Studio Code
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
