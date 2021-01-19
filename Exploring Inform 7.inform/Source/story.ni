@@ -28,4 +28,9 @@ The electronic key is carried by Floyd.
 A persuasion rule for asking someone to try doing something:
 	persuasion succeeds.
 
+[ In this scenario, the "actor attempting to take from a closed item rule" will apply when Floyd attempts to open the glass case. That action will fail due to the "can't open what's locked rule" but that will not actually be reported. ]
+Before someone taking something which is in a closed container (called the closed item) (this is the actor attempting to take from a closed item rule):
+	try the person asked opening the closed item;
+	if the closed item is closed, stop the action.
+
 Test me with "open case / take protomolecule / floyd, take the protomolecule".
