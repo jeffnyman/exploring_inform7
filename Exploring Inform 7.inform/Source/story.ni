@@ -33,4 +33,10 @@ Before someone taking something which is in a closed container (called the close
 	try the person asked opening the closed item;
 	if the closed item is closed, stop the action.
 
+[ In this scenario, which is the additive with the one above, the "actor attempting to take from a closed item rule" will still apply. But now the "actor attempting to open something locked rule" will also apply. If Floyd has the key, this will succeed and Floyd will end up holding the protomolecule. ]
+Before someone opening a locked container (called the closed item) (this is the actor attempting to open something locked rule):
+	if the person asked is carrying the matching key of the closed item:
+		try the person asked unlocking the closed item with the matching key;
+	if the closed item is locked, stop the action.
+
 Test me with "open case / take protomolecule / floyd, take the protomolecule".
