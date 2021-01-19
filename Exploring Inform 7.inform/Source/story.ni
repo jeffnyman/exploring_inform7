@@ -24,4 +24,8 @@ The glass case contains a protomolecule.
 Floyd is a person in the Test Lab.
 The electronic key is carried by Floyd.
 
+[ Without this rule, you would be told "Floyd has better things to do." With the rule in place, you will be told: "Floyd is unable to do that." So you go from him not listening at all to listening but not sure what to do. Note that this rule is not specific to Floyd, but rather is a persuasion rule for any non-player character. ]
+A persuasion rule for asking someone to try doing something:
+	persuasion succeeds.
+
 Test me with "open case / take protomolecule / floyd, take the protomolecule".
