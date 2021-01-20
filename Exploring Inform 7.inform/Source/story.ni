@@ -59,7 +59,18 @@ Every turn:
 		if Floyd can see a dangerous thing (called the item of fascination):
 			say "Floyd eyes [the item of fascination] with obvious intent.";
 		otherwise:
-			say "Floyd glances at you in a slightly shifty way."
+			say "Floyd glances at you in a slightly shifty way.";
+	if the curiosity of Floyd is greater than 3 and Floyd is visible:
+		if Floyd carries a the protomolecule:
+			try Floyd triggering the protomolecule.
+
+[ This is required in order to allow Floyd to actually trigger the dangerous protomolecule. Just like the escaping action for Plato further down, this action cannot be triggered by the player as there is no context for understanding the idea of "triggering" as a player action. ]
+
+Triggering is an action applying to one touchable thing.
+
+Carry out someone triggering:
+	if the noun is the protomolecule:
+		end the story saying "The protomolecule immediately expands and consumes everything and everyone in the room."
 
 [ In this scenario, the "actor attempting to take from a closed item rule" will apply when Floyd attempts to open the glass case. That action will fail due to the "can't open what's locked rule" but that will not actually be reported. ]
 Before someone taking something which is in a closed container (called the closed item) (this is the actor attempting to take from a closed item rule):
