@@ -32,9 +32,6 @@ Plato is a person in the Test Lab.
 
 Floyd is a person in the Test Lab.
 
-[ Floyd carrying the key was the initial implementation, which was simple. The next iteration requires him getting the key, which is an obstacle to him opening the glass case which is locked. ]
-[ The electronic key is carried by Floyd. ]
-
 [ Without this rule, you would be told "Floyd has better things to do." With the rule in place, you will be told: "Floyd is unable to do that." So you go from him not listening at all to listening but not sure what to do. Note that this rule is not specific to Floyd, but rather is a persuasion rule for any non-player character. ]
 A persuasion rule for asking someone to try doing something:
 	persuasion succeeds.
@@ -44,16 +41,13 @@ Before someone taking something which is in a closed container (called the close
 	try the person asked opening the closed item;
 	if the closed item is closed, stop the action.
 
-[ In this scenario, which is the additive with the one above, the "actor attempting to take from a closed item rule" will still apply. But now the "actor attempting to open something locked rule" will also apply. If Floyd has the key, this will succeed and Floyd will end up holding the protomolecule. ]
+[ In this scenario, which is the additive with the one above, the "actor attempting to take from a closed item rule" will still apply. But now the "actor attempting to open something locked rule" will also apply. If Floyd is able to see the key and if Floyd is able to take the key, this will succeed and Floyd will end up holding the protomolecule. Note, however, that the ability to take the key if it is seen is covered by an additive rule below this one. ]
 Before someone opening a locked container (called the closed item) (this is the actor attempting to open something locked rule):
-	[ This logic has to be refined from the original example. Since Floyd is not automatically carrying the key as he was originally, the condition has to be broadened out a bit. ]
-	[ if the person asked is carrying the matching key of the closed item:
-		try the person asked unlocking the closed item with the matching key; ]
 	if the person asked can see the matching key of the closed item:
 		try the person asked unlocking the closed item with the matching key;
 	if the closed item is locked, stop the action.
 
-[ This scenario has to be added in order to make sure that Floyd will actually try to take the matching key. The above rule was changed from Floyd using the key he had to checking if Floyd could see the key. But there still has to be something that tells him to take the key if he can see it. ]
+[ This scenario exists to make sure that Floyd will actually try to take the matching key. The above rule was changed from Floyd using the key he had to checking if Floyd could see the key. But there still has to be something that tells him to take the key if he can see it. ]
 Before someone unlocking a locked container with something which is not carried by the person asked (this is the actor attempts to acquire matching key for locked item rule):
 	try the person asked taking the second noun;
 	if the person asked does not have the second noun, stop the action.
