@@ -39,10 +39,6 @@ The curiosity of Floyd is 0.
 [ It's possible to define something that applies to a value. In this case, Floyd will be defined as curious based on the the value of his curiosity. ]
 Definition: Floyd is curious if the curiosity of Floyd is greater than 2.
 
-[ Without this rule, you would be told "Floyd has better things to do." With the rule in place, you will be told: "Floyd is unable to do that." So you go from him not listening at all to listening but not sure what to do. Note that this rule is not specific to Floyd, but rather is a persuasion rule for any non-player character. ]
-[ A persuasion rule for asking someone to try doing something:
-	persuasion succeeds. ]
-
 [ The above persuasion rule has to be changed a bit to make it more specific to Floyd and conditionalized upon his curiosity level. ]
 A persuasion rule for asking Floyd to try doing something:
 	if Floyd is curious:
