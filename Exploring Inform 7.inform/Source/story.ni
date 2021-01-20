@@ -2,6 +2,9 @@
 
 The Test Lab is a room.
 
+The Test Lobby is a room.
+It is south of the Test Lab.
+
 A container called the glass case is in the Test Lab.
 
 [ To Inform, containers are, by default, set up as such:
@@ -21,6 +24,8 @@ The matching key of the glass case is an electronic key.
 
 The glass case contains a protomolecule.
 
+Plato is a person in the Test Lab.
+
 Floyd is a person in the Test Lab.
 The electronic key is carried by Floyd.
 
@@ -38,5 +43,21 @@ Before someone opening a locked container (called the closed item) (this is the 
 	if the person asked is carrying the matching key of the closed item:
 		try the person asked unlocking the closed item with the matching key;
 	if the closed item is locked, stop the action.
+
+[ Here we have a specific rule for a particular non-player character but it's one that's largely purely reactive. There is a goal here but it's essentially tied to the goal of the other non-player character being reached. ]
+Every turn when Plato can touch the protomolecule:
+	try Plato escaping.
+
+Escaping is an action applying to nothing.
+
+[ The notion of "the person asked" here might seem odd. What's happening here is that "try Plato escaping", from the rule above, means that Plato is, in that context, "the person asked"; in this case, "the person asked to try escaping." ]
+Carry out someone escaping:
+	let space be the location of the person asked;
+	let place be a random room which is adjacent to the space;
+	let the escape route be the best route from the space to the place;
+	try the person asked going the escape route.
+
+Report Plato going a direction (called the escape route):
+	say "Plato looks terrified at the protomolecule and heads [escape route]." instead.
 
 Test me with "open case / take protomolecule / floyd, take the protomolecule".
