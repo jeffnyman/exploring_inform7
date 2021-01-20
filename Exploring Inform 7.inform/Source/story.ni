@@ -32,9 +32,27 @@ Plato is a person in the Test Lab.
 
 Floyd is a person in the Test Lab.
 
+[ Floyd will now have a curiosity value that can refine his behavior. ]
+Floyd has a number called curiosity.
+The curiosity of Floyd is 0.
+
+[ It's possible to define something that applies to a value. In this case, Floyd will be defined as curious based on the the value of his curiosity. ]
+Definition: Floyd is curious if the curiosity of Floyd is greater than 2.
+
 [ Without this rule, you would be told "Floyd has better things to do." With the rule in place, you will be told: "Floyd is unable to do that." So you go from him not listening at all to listening but not sure what to do. Note that this rule is not specific to Floyd, but rather is a persuasion rule for any non-player character. ]
-A persuasion rule for asking someone to try doing something:
-	persuasion succeeds.
+[ A persuasion rule for asking someone to try doing something:
+	persuasion succeeds. ]
+
+[ The above persuasion rule has to be changed a bit to make it more specific to Floyd and conditionalized upon his curiosity level. ]
+A persuasion rule for asking Floyd to try doing something:
+	if Floyd is curious:
+		persuasion fails;
+	otherwise:
+		persuasion succeeds.
+
+[ There has to be some mechanism that allows Floyd's curiosity value to change. This is one of the simplest possible to use for illustrative purposes. ]
+Every turn:
+	increment the curiosity of Floyd.
 
 [ In this scenario, the "actor attempting to take from a closed item rule" will apply when Floyd attempts to open the glass case. That action will fail due to the "can't open what's locked rule" but that will not actually be reported. ]
 Before someone taking something which is in a closed container (called the closed item) (this is the actor attempting to take from a closed item rule):
@@ -68,4 +86,5 @@ Carry out someone escaping:
 Report Plato going a direction (called the escape route):
 	say "Plato looks terrified at the protomolecule and heads [escape route]." instead.
 
-Test me with "open case / take protomolecule / floyd, take the protomolecule".
+Test scenario1 with "wait / wait / wait / floyd, take the protomolecule".
+Test scenario2 with "wait / wait / floyd, take the protomolecule".
