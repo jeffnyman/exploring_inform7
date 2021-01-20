@@ -5,6 +5,9 @@ The Test Lab is a room.
 The Test Lobby is a room.
 It is south of the Test Lab.
 
+[ Adding this to provide nuance to objects, which can determine behavior. ]
+A thing can be dangerous or safe.
+
 A container called the glass case is in the Test Lab.
 
 [ To Inform, containers are, by default, set up as such:
@@ -23,6 +26,7 @@ The glass case is transparent, closed, openable, locked, and lockable.
 The matching key of the glass case is an electronic key.
 
 The glass case contains a protomolecule.
+The protomolecule is dangerous.
 
 A container called a mesh basket is in the Test Lab.
 The mesh basket is transparent, closed, and openable.
@@ -46,9 +50,16 @@ A persuasion rule for asking Floyd to try doing something:
 	otherwise:
 		persuasion succeeds.
 
-[ There has to be some mechanism that allows Floyd's curiosity value to change. This is one of the simplest possible to use for illustrative purposes. ]
+[ There has to be some mechanism that allows Floyd's curiosity value to change. This is one of the simplest possible to use for illustrative purposes.  This is now augmented to allow Floyd to exhibit behavior based on his curiosity value. Note that the "is visible" part is used to make sure that any reports about Floyd's behavior will only occur if the player can actually see Floyd. ]
 Every turn:
-	increment the curiosity of Floyd.
+	increment the curiosity of Floyd;
+	if the curiosity of Floyd is 2 and Floyd is visible:
+		say "Floyd looks a little restless.";
+	if the curiosity of Floyd is 3 and Floyd is visible:
+		if Floyd can see a dangerous thing (called the item of fascination):
+			say "Floyd eyes [the item of fascination] with obvious intent.";
+		otherwise:
+			say "Floyd glances at you in a slightly shifty way."
 
 [ In this scenario, the "actor attempting to take from a closed item rule" will apply when Floyd attempts to open the glass case. That action will fail due to the "can't open what's locked rule" but that will not actually be reported. ]
 Before someone taking something which is in a closed container (called the closed item) (this is the actor attempting to take from a closed item rule):
@@ -84,3 +95,4 @@ Report Plato going a direction (called the escape route):
 
 Test scenario1 with "wait / wait / wait / floyd, take the protomolecule".
 Test scenario2 with "wait / wait / floyd, take the protomolecule".
+Test scenario3 with "south / purloin protomolecule then drop it / north".
